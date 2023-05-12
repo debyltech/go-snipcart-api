@@ -15,7 +15,7 @@ type Config struct {
 	Production     bool   `env:"API_PRODUCTION"`
 }
 
-type WebhookSmsSecret struct {
+type ApiSecret struct {
 	SnipcartApiKey string `json:"snipcart_api_key"`
 }
 
@@ -37,7 +37,7 @@ func NewConfigFromFile(filePath string) (*Config, error) {
 func NewConfigFromEnv(useAwsSms bool) (*Config, error) {
 	var config Config
 	if err := env.Parse(&config); err != nil {
-		return &Config{}, err
+		return nil, err
 	}
 
 	if useAwsSms {
@@ -46,18 +46,18 @@ func NewConfigFromEnv(useAwsSms bool) (*Config, error) {
 			return &config, nil
 		}
 
-		var webhookSmsSecret WebhookSmsSecret
+		var apiSecret ApiSecret
 		secretString, err := secretCache.GetSecretString(config.AwsSmsArn)
 		if err != nil {
-			return &config, fmt.Errorf("issue with GetSecretString: %s\n", err.Error())
+			return &config, fmt.Errorf("issue with GetSecretString (%s): %s\n", secretString, err.Error())
 		}
 
-		err = json.Unmarshal([]byte(secretString), &webhookSmsSecret)
+		err = json.Unmarshal([]byte(secretString), &apiSecret)
 		if err != nil {
 			return &config, fmt.Errorf("issue with unmarshal: %s\n", err.Error())
 		}
 
-		config.SnipcartApiKey = webhookSmsSecret.SnipcartApiKey
+		config.SnipcartApiKey = apiSecret.SnipcartApiKey
 	}
 
 	return &config, nil

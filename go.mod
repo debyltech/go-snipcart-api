@@ -5,7 +5,7 @@ go 1.20
 require (
 	github.com/aws/aws-lambda-go v1.41.0
 	github.com/awslabs/aws-lambda-go-api-proxy v0.14.0
-	github.com/debyltech/go-shippr v0.2.0
+	github.com/debyltech/go-snipcart v0.2.2
 	github.com/debyltech/go-snipcart-api/config v0.0.0-00010101000000-000000000000
 	github.com/debyltech/go-snipcart-api/debug v0.0.0-00010101000000-000000000000
 	github.com/gin-gonic/gin v1.9.0
@@ -18,7 +18,6 @@ require (
 	github.com/caarlos0/env/v7 v7.1.0 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311 // indirect
 	github.com/debyltech/go-helpers v1.1.0 // indirect
-	github.com/debyltech/go-snipcart v0.2.2 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect

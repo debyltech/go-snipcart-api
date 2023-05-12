@@ -33,8 +33,8 @@ func init() {
 
 	api := r.Group("/api/snipcart")
 	{
-		//api.GET("/products", GetProducts())
-		//api.GET("/products/:id", GetProductById())
+		api.GET("/products", GetProducts())
+		api.GET("/products/:id", GetProductById())
 		api.GET("/health", func(c *gin.Context) {
 			c.JSON(200, gin.H{
 				"message": "ready",

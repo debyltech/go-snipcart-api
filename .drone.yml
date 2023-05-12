@@ -32,13 +32,13 @@ steps:
       - aws lambda update-function-code --function-name go-snipcart-api --zip-file "fileb://go-snipcart-api.zip"
     when:
       branch:
-        - master
+        - main
       event:
         exclude:
           - pull_request
 trigger:
   branch:
-    - master
+    - main
   event:
     include:
       - push
@@ -79,7 +79,7 @@ steps:
       - aws lambda update-function-code --function-name webhooks-prod --zip-file "fileb://go-snipcart-api.zip"
 trigger:
   branch:
-    - master
+    - main
   event:
     include:
       - tag
@@ -88,6 +88,6 @@ trigger:
  
 ---
 kind: signature
-hmac: 754fa7c44c8d95a6d3c3ea5e4a9e5dc128b3cd8ea0ab8f9561a3baa2cd35c8c5
+hmac: c3fcc32d408c591ce291fd3fc379aa1e1f478b29721ebc38d685c9bed9a357dc
 
 ...

@@ -5,7 +5,7 @@ go 1.20
 require (
 	github.com/aws/aws-lambda-go v1.41.0
 	github.com/awslabs/aws-lambda-go-api-proxy v0.14.0
-	github.com/debyltech/go-snipcart v0.2.3
+	github.com/debyltech/go-snipcart v0.2.4
 	github.com/debyltech/go-snipcart-api/config v0.0.0-00010101000000-000000000000
 	github.com/debyltech/go-snipcart-api/debug v0.0.0-00010101000000-000000000000
 	github.com/gin-gonic/gin v1.9.0

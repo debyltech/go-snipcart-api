@@ -28,7 +28,7 @@ func GetProductById() gin.HandlerFunc {
 	fn := func(c *gin.Context) {
 		product, err := snipcartClient.GetProductById(c.Param("id"))
 		if err != nil {
-			debugger.Printf("issue with GetProducts: %s\n", err.Error())
+			debugger.Printf("issue with GetProductById: %s\n", err.Error())
 			c.JSON(http.StatusInternalServerError, JSONErrorResponse{
 				Status: http.StatusInternalServerError,
 				Error:  err.Error(),

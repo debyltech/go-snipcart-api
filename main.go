@@ -30,7 +30,7 @@ func CORSMiddleware() gin.HandlerFunc {
 
 func init() {
 	var err error
-	apiConfig, err = config.NewConfigFromEnv(true)
+	apiConfig, err = config.NewConfigFromEnv(false)
 	if err != nil {
 		fmt.Printf("ERROR %s\n", err.Error())
 		return

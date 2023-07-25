@@ -1,4 +1,6 @@
-go-snipcart:
+SRC=$(wildcard *.go)
+
+go-snipcart-api: $(SRC)
 	CGO_ENABLED=0 go build -tags netgo
 
 go-snipcart-api.zip: go-snipcart-api

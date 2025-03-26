@@ -1,4 +1,5 @@
 *.json
 *.sum
+*.zip
+bootstrap
 go-snipcart-api
-go-snipcart-api.zip
